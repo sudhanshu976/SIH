@@ -1,0 +1,399 @@
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8f5e9; 
+}
+
+/* Header Styles */
+header {
+    background-color: #004d26; 
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styles */
+.logo h1 {
+    margin: 0;
+    color: #ffffff; /* White color for the website name */
+    font-size: 36px;
+    font-family: 'Lobster', cursive; /* Stylish font for the logo */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White color for the navigation links */
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #a0db8e;
+    transition: width 0.3s ease;
+    left: 0;
+    bottom: 0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #a0db8e;
+}
+
+/* CTA Section Styles */
+.cta-section {
+    background-color: #004d26; /* Dark green background for the CTA section */
+    color: #ffffff; /* White text color */
+    text-align: center;
+    padding: 40px 20px;
+    width: 50%;
+    margin: 40px auto; /* Center the box and add margin between sections */
+    border-radius: 8px;
+}
+
+.cta-section h2 {
+    font-size: 28px;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-buttons .signup-btn,
+.cta-buttons .login-btn {
+    background-color: #a0db8e; /* Light green for buttons */
+    color: #004d26; /* Dark green text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons .signup-btn:hover,
+.cta-buttons .login-btn:hover {
+    background-color: #82c882; /* Slightly darker green on hover */
+}
+
+/* Content Section Styles */
+.content-section {
+    padding: 40px 0; /* Adjusted padding */
+}
+
+.content-box {
+    width: 80%; /* Ensure the content box is centered and uniform */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; /* White background for the content boxes */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-box .image {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 45%; /* Ensures images are the same size */
+}
+
+.content-box .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.content-box .text {
+    flex: 1;
+    padding-left: 20px;
+    color: #004d26; /* Dark green text to match the theme */
+}
+
+.content-box .text h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: 'Lobster', cursive; /* Stylish font for headings */
+}
+
+.content-box .text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Reverse the layout for alternating sections */
+.content-section.reverse .content-box {
+    flex-direction: row-reverse;
+}
+
+.content-section.reverse .content-box .image {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.content-section.reverse .content-box .text {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+/* style.css */
+
+/* Form container styles */
+.form-container {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position to cover the entire screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering */
+    width: 60%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width for larger screens */
+    background: #ffffff; /* White background */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    padding: 30px; /* Generous padding */
+    z-index: 1000; /* Ensure it is on top of other content */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Content inside the form */
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+}
+
+/* Close button styling */
+.close-btn {
+    align-self: flex-end; /* Align close button to the end */
+    font-size: 24px;
+    color: #004d26; /* Dark green color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.close-btn:hover {
+    color: #003d1f; /* Darker green on hover */
+}
+
+/* Form labels styling */
+.form-container label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Margin around labels */
+    font-weight: bold; /* Bold labels */
+    font-family: 'Roboto', sans-serif; /* Font for labels */
+    color: #004d26; /* Dark green color */
+}
+
+/* Input fields styling */
+.form-container input {
+    width: calc(100% - 24px); /* Adjusts width with padding */
+    padding: 12px;
+    margin-bottom: 20px; /* Spacing between fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-family: 'Roboto', sans-serif; /* Font for inputs */
+}
+
+/* Button styling */
+.form-container button {
+    background-color: #004d26; /* Dark green background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 12px 20px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    font-weight: 500; /* Medium weight */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.form-container button:hover {
+    background-color: #003d1f; /* Darker green on hover */
+}
+
+/* Error message styling */
+.error-message {
+    color: #ff0000; /* Red color for error messages */
+    margin-top: 10px; /* Margin on top of the error message */
+    font-weight: bold;
+}
+
+/* Success Message Box */
+.success-message-box {
+    display: none; /* Hidden by default, shown via JavaScript */
+    position: fixed;
+    top: 20px; /* Position from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Light green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    font-size: 18px; /* Larger text size */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.success-message-box.show {
+    display: block; /* Show the message box */
+}
+
+
+/* Chatbot container */
+/* Chatbot container */
+/* Chatbot container */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000; /* Ensure the chatbot is on top of other elements */
+}
+
+/* Chatbot circle icon */
+#chatbot {
+    width: 50px; /* Smaller icon size */
+    height: 50px; /* Smaller icon size */
+    border-radius: 50%;
+    background: #009688; /* Teal color for a green-themed look */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 24px; /* Font size for icon */
+    transition: all 0.3s ease;
+    overflow: hidden; /* Ensure content is hidden when collapsed */
+}
+
+/* Expanded state styles */
+#chatbot.expanded {
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    background: #e8f5e9; /* Light green background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Header inside the expanded chatbot */
+#chatbot-header {
+    background: #009688; /* Teal color to match the theme */
+    color: #fff;
+    padding: 10px;
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c8e6c9; /* Light green border */
+    position: relative; /* To position the close button properly */
+}
+
+/* Title in the header */
+#chatbot-title {
+    font-size: 14px; /* Font size for title */
+    margin-right: 18px; /* Space between title and close button */
+}
+
+/* Close button */
+#chatbot-close-btn {
+    cursor: pointer;
+    font-size: 16px; /* Font size for close button */
+}
+
+/* Messages area */
+#chatbot-messages {
+    padding: 10px;
+    overflow-y: auto;
+    height: calc(100% - 60px); /* Adjust based on header height */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Message styles */
+.user-message, .bot-message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    max-width: 80%;
+    color: #000; /* Ensure text is dark and readable */
+}
+
+.user-message {
+    background: #b9fbc0; /* Light green for user messages */
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #f1f8e9; /* Very light green for bot messages */
+    align-self: flex-start;
+}
+
+/* Input field inside the expanded chatbot */
+#chatbot-input {
+    border-top: 1px solid #c8e6c9; /* Light green border */
+    padding: 10px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-size: 14px; /* Adjust font size */
+}
+
+#chatbot-input:focus {
+    border-color: #009688; /* Teal color */
+}
